@@ -9,7 +9,7 @@ st.line_chart(df)
 st.area_chart(df)
 st.bar_chart(df)
 
-myData = {'lat': [37.56668], 'lon': [126.9784]}
+myData = {'lat': [36.3625], 'lon': [127.3426]}
 for _ in range(100):
     myData['lat'].append(myData['lat'][0] + np.random.randn() / 50.0)
     myData['lon'].append(myData['lon'][0] + np.random.randn() / 50.0)
