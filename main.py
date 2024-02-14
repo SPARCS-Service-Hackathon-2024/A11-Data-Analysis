@@ -1,18 +1,15 @@
 import streamlit as st
-import numpy as np
 import pandas as pd
 
-myData = np.random.randn(30,3)
-df = pd.DataFrame(data=myData, columns=['a','b','c'])
+# CSV 파일 경로
+file_path = '/Users/bin/Desktop/a11-analysis/data/school.csv'
 
-st.line_chart(df)
-st.area_chart(df)
-st.bar_chart(df)
+# CSV 파일 읽기 (한국어 인코딩 사용)
+school_df = pd.read_csv(file_path, encoding='utf-8')
 
-myData = {'lat': [36.3625], 'lon': [127.3426]}
-for _ in range(100):
-    myData['lat'].append(myData['lat'][0] + np.random.randn() / 50.0)
-    myData['lon'].append(myData['lon'][0] + np.random.randn() / 50.0)
+# 데이터 표시
+st.write("학교 데이터:")
+st.write(school_df)
 
-st.map(data=myData, zoom=10)
-
+# 지도 표시 (위도와 경도로 설정)
+st.map(data=school_df, zoom=10)
