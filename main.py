@@ -45,19 +45,17 @@ st.altair_chart(chart, use_container_width=True)
 # ----CHART 2----
 st.header("대전 지역별 다자녀가정 우대 업체")
 
-food_path = './data/대전광역시_다자녀가정우대 참여업체현황(음식점)_20210927.csv'
-bakery_path = './data/대전광역시_다자녀가정우대 참여업체현황(제과점)_20210927.csv'
-institute_path = './data/대전광역시_다자녀가정우대 참여업체현황(학원, 독서실)_20210927.csv'
-books_path = './data/대전광역시_다자녀가정우대 참여업체현황(서적, 문구)_20210927.csv'
-health_path = './data/대전광역시_다자녀가정우대 참여업체현황(건강, 레저)_20210927.csv'
+food_path = '대전광역시_다자녀가정우대 참여업체현황(음식점)_20210927.csv'
+institute_path = '대전광역시_다자녀가정우대 참여업체현황(학원, 독서실)_20210927.csv'
+books_path = '대전광역시_다자녀가정우대 참여업체현황(서적, 문구)_20210927.csv'
+health_path = '대전광역시_다자녀가정우대 참여업체현황(건강, 레저)_20210927.csv'
 
 food_df = pd.read_csv(food_path)
-bakery_df = pd.read_csv(bakery_path)
 institute_df = pd.read_csv(institute_path)
 books_df = pd.read_csv(books_path)
 health_df = pd.read_csv(health_path)
 
-dfs = [food_df, bakery_df, institute_df, books_df, health_df]
+dfs = [food_df, institute_df, books_df, health_df]
 
 combined_df = pd.concat(dfs)
 
